@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
+
+    <!-- Global stylesheets -->
+    <link href="admin/assets/global_assets/css/fonts_roboto.css" rel="stylesheet" type="text/css">
+    <link href="admin/assets/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
+    <link href="admin/assets/layout_4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="admin/assets/layout_4/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
+    <link href="admin/assets/layout_4/css/layout.min.css" rel="stylesheet" type="text/css">
+    <link href="admin/assets/layout_4/css/components.min.css" rel="stylesheet" type="text/css">
+    <link href="admin/assets/layout_4/css/colors.min.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script src="admin/assets/global_assets/js/main/jquery.min.js"></script>
+    <script src="admin/assets/global_assets/js/main/bootstrap.bundle.min.js"></script>
+    <script src="admin/assets/global_assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script src="admin/assets/layout_4/js/app.js"></script>
+    <!-- /theme JS files -->
+</head>
+<body>
+    <!-- Main navbar -->
+    <!-- /main navbar -->
+    <!-- Page content -->
+    <div class="page-content">
+        <!-- Main content -->
+        <div class="content-wrapper">
+            <!-- Content area -->
+            <div class="content d-flex justify-content-center align-items-center">
+                <!-- Login form -->
+                <form class="login-form" id="frmlogin" method="post">
+
+                    <div class="text-danger validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
+</ul></div>
+
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <div class="text-center mb-3">
+                                <i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+                                <h5 class="mb-0">Giriş</h5>
+                                <span class="d-block text-muted">Kullanıcı Adı ve Şifrenizi Giriniz</span>
+                            </div>
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+
+
+
+                                <input type="text" class="form-control" placeholder="Username" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" value="">
+                                <div class="form-control-feedback">
+                                    <i class="icon-user text-muted"></i>
+                                </div>
+
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+
+
+
+                            </div>
+                            <div class="form-group form-group-feedback form-group-feedback-left">
+                                <input type="password" class="form-control" placeholder="Şifre" data-val="true" data-val-required="The Password field is required." id="Password" name="Password">
+                                <div class="form-control-feedback">
+                                    <i class="icon-lock2 text-muted"></i>
+                                </div>
+
+                                <span class="text-danger field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="btngiris" class="btn btn-primary btn-block">Giriş  <i class="icon-circle-right2 ml-2"></i></button>
+                            </div>
+                            <div class="text-center">
+                                <a id="btnsifremiunuttum" href="login_password_recover.html">Şifremi Unuttum ?</a>
+                            </div>
+                        </div>
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8L1OWfgsCzRFvZV7qN8sFR2Lzh1_EiPsjqxNdN5INwRFTfDvF9zTjKnsiTtIzsuDPn_n9D0ztC0V7y6b4Hpv04r7fl16gmDFHweJ31BViNEK-wIjHOriLzZxzKecYCnpuLy6FBWwbzxqDlXQ8xDx6uY" /></form>
+                <!-- /login form -->
+            </div>
+            <!-- /content area -->
+            <!-- Footer -->
+            <div class="navbar navbar-expand-lg navbar-light">
+                <div class="text-center d-lg-none w-100">
+                    <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                        <i class="icon-unfold mr-2"></i>
+                        Footer
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar-footer">
+                </div>
+            </div>
+            <!-- /footer -->
+        </div>
+        <!-- /main content -->
+    </div>
+    <!-- /page content -->
+
+
+
+    <script>
+
+        $(function () {
+
+
+
+            $("#frmlogin").submit(function (event) {               
+                var el = $('#btngiris');
+                el.prop('disabled', true);
+
+                setTimeout(function () { el.prop('disabled', false); }, 3000);
+            });
+
+
+            $('#btnsifremiunuttum').click(function (e) {
+                e.preventDefault();
+
+                $.get("/login/ForgotPassword",
+                    function (data, textStatus, jqXHR) {
+
+
+                        $('body').append(data);
+                        $('#modal_forgotpassword').modal('show');
+
+                        $('#modal_forgotpassword').on('hidden.bs.modal', function (e) {
+                            $(this).remove();
+                        });
+
+
+                    }
+
+                );
+
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

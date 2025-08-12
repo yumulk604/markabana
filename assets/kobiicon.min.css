@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../lib/icomoon/fonts/icomoon.eot?k0zcrt');
+  src:  url('../lib/icomoon/fonts/icomoon.eot?k0zcrt#iefix') format('embedded-opentype'),
+    url('../lib/icomoon/fonts/icomoon.ttf?k0zcrt') format('truetype'),
+    url('../lib/icomoon/fonts/icomoon.woff?k0zcrt') format('woff'),
+    url('../lib/icomoon/fonts/icomoon.svg?k0zcrt#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-security:before {
+  content: "\e908";
+}
+.icon-archive:before {
+  content: "\e904";
+}
+.icon-alarm:before {
+  content: "\e905";
+}
+.icon-time:before {
+  content: "\e905";
+}
+.icon-clock:before {
+  content: "\e905";
+}
+.icon-credit-card:before {
+  content: "\e906";
+}
+.icon-money:before {
+  content: "\e906";
+}
+.icon-payment:before {
+  content: "\e906";
+}
+.icon-ecommerce:before {
+  content: "\e906";
+}
+.icon-check2:before {
+  content: "\e601";
+}
+.icon-checkmark-circle2:before {
+  content: "\e853";
+}
+.icon-close2:before {
+  content: "\e995";
+}
+.icon-info:before {
+  content: "\e903";
+}
+.icon-information:before {
+  content: "\e903";
+}
+.icon-pencil7:before {
+  content: "\e914";
+}
+.icon-plus-circle2:before {
+  content: "\ed5e";
+}
+.icon-minus-circle2:before {
+  content: "\ed5f";
+}
+.icon-filter3:before {
+  content: "\ee88";
+}
+.icon-paragraph-justify3:before {
+  content: "\eec1";
+}
+.icon-exclamation:before {
+  content: "\e993";
+}
+.icon-trash:before {
+  content: "\e99e";
+}
+.icon-cross:before {
+  content: "\e9b6";
+}
+.icon-whatsapp1:before {
+  content: "\e902";
+}
+.icon-brand:before {
+  content: "\e902";
+}
+.icon-social:before {
+  content: "\e902";
+}
+.icon-home:before {
+  content: "\e900";
+}
+.icon-cart-add:before {
+  content: "\ea69";
+}
+.icon-user-plus:before {
+  content: "\eb35";
+}
+.icon-grid:before {
+  content: "\ec5a";
+}
+.icon-star-empty3:before {
+  content: "\ece0";
+}
+.icon-star-half:before {
+  content: "\ece1";
+}
+.icon-star-full2:before {
+  content: "\ece2";
+}
+.icon-heart5:before {
+  content: "\ece9";
+}
+.icon-heart6:before {
+  content: "\ecea";
+}
+.icon-arrow-right5:before {
+  content: "\edc5";
+}
+.icon-arrow-down5:before {
+  content: "\edc6";
+}
+.icon-circle-down2:before {
+  content: "\ede6";
+}
+.icon-facebook:before {
+  content: "\eee8";
+}
+.icon-instagram:before {
+  content: "\eeec";
+}
+.icon-twitter:before {
+  content: "\eeed";
+}
+.icon-youtube:before {
+  content: "\eef3";
+}
+.icon-search4:before {
+  content: "\e98e";
+}
+.icon-truck:before {
+  content: "\e907";
+}
+.icon-transport:before {
+  content: "\e907";
+}
+.icon-transaction:before {
+  content: "\e907";
+}
+.icon-shipping:before {
+  content: "\e907";
+}
+.icon-whatsapp:before {
+  content: "\e901";
+  color: #25d366;
+}
