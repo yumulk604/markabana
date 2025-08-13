@@ -1,0 +1,41 @@
+<script>
+
+        $(function () {
+
+
+
+            $("#frmlogin").submit(function (event) {
+                var el = $('#btngiris');
+                el.prop('disabled', true);
+
+                setTimeout(function () { el.prop('disabled', false); }, 3000);
+            });
+
+
+            $('#btnsifremiunuttum').click(function (e) {
+                e.preventDefault();
+
+                $.get("/login/ForgotPassword",
+                    function (data, textStatus, jqXHR) {
+
+
+                        $('body').append(data);
+                        $('#modal_forgotpassword').modal('show');
+
+                        $('#modal_forgotpassword').on('hidden.bs.modal', function (e) {
+                            $(this).remove();
+                        });
+
+
+                    }
+
+                );
+
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

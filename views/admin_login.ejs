@@ -1,32 +1,5 @@
+<%- include('partials/admin_header') %>
 
-
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Limitless - Responsive Web Application Kit by Eugene Kopyov</title>
-
-    <!-- Global stylesheets -->
-    <link href="admin/assets/global_assets/css/fonts_roboto.css" rel="stylesheet" type="text/css">
-    <link href="admin/assets/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
-    <link href="admin/assets/layout_4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="admin/assets/layout_4/css/bootstrap_limitless.min.css" rel="stylesheet" type="text/css">
-    <link href="admin/assets/layout_4/css/layout.min.css" rel="stylesheet" type="text/css">
-    <link href="admin/assets/layout_4/css/components.min.css" rel="stylesheet" type="text/css">
-    <link href="admin/assets/layout_4/css/colors.min.css" rel="stylesheet" type="text/css">
-    <!-- /global stylesheets -->
-    <!-- Core JS files -->
-    <script src="admin/assets/global_assets/js/main/jquery.min.js"></script>
-    <script src="admin/assets/global_assets/js/main/bootstrap.bundle.min.js"></script>
-    <script src="admin/assets/global_assets/js/plugins/loaders/blockui.min.js"></script>
-    <!-- /core JS files -->
-    <!-- Theme JS files -->
-    <script src="admin/assets/layout_4/js/app.js"></script>
-    <!-- /theme JS files -->
-</head>
-<body>
     <!-- Main navbar -->
     <!-- /main navbar -->
     <!-- Page content -->
@@ -37,6 +10,10 @@
             <div class="content d-flex justify-content-center align-items-center">
                 <!-- Login form -->
                 <form class="login-form" id="frmlogin" method="post">
+
+                    <% if (error) { %>
+                        <div class="alert alert-danger"><%= error %></div>
+                    <% } %>
 
                     <div class="text-danger validation-summary-valid" data-valmsg-summary="true"><ul><li style="display:none"></li>
 </ul></div>
@@ -100,46 +77,4 @@
     </div>
     <!-- /page content -->
 
-
-
-    <script>
-
-        $(function () {
-
-
-
-            $("#frmlogin").submit(function (event) {               
-                var el = $('#btngiris');
-                el.prop('disabled', true);
-
-                setTimeout(function () { el.prop('disabled', false); }, 3000);
-            });
-
-
-            $('#btnsifremiunuttum').click(function (e) {
-                e.preventDefault();
-
-                $.get("/login/ForgotPassword",
-                    function (data, textStatus, jqXHR) {
-
-
-                        $('body').append(data);
-                        $('#modal_forgotpassword').modal('show');
-
-                        $('#modal_forgotpassword').on('hidden.bs.modal', function (e) {
-                            $(this).remove();
-                        });
-
-
-                    }
-
-                );
-
-
-            });
-
-        });
-    </script>
-
-</body>
-</html>
+<%- include('partials/admin_footer') %>
